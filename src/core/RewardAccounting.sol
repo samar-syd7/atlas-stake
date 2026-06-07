@@ -2,6 +2,7 @@
 pragma solidity ^0.8.24;
 
 import { Storage } from "./Storage.sol";
+import { Errors } from "../libraries/Errors.sol";
 
 abstract contract RewardAccounting is Storage {
     function _updatePool() internal {
@@ -94,8 +95,14 @@ abstract contract RewardAccounting is Storage {
             "Reward debt overflow"
         );
 
-        user.rewardDebt =
-            uint128(newRewardDebt);
+        if (
+            newRewardDebt > type(uint128).max
+        ) {
+            revert Errors.AmountOverflow();
+        }
+
+        // forge-lint: disable-next-line(unsafe-typecast)
+        user.rewardDebt = uint128(newRewardDebt);
     }
 
     function pendingRewards(

@@ -38,4 +38,9 @@ library Events {
     event ProtocolPaused(address indexed admin);
 
     event ProtocolUnpaused(address indexed admin);
+
+    event RewardsFunded(
+        address indexed funder,
+        uint256 amount
+    );
 }

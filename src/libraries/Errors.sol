@@ -14,4 +14,5 @@ library Errors {
     error RewardRateTooHigh();
     error TransferFailed();
     error InvalidRewardConfiguration();
+    error AmountOverflow();
 }
