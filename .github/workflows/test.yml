@@ -12,7 +12,6 @@ check:
 name: Foundry project
 runs-on: ubuntu-latest
 
-```
 permissions:
   contents: read
 
@@ -37,4 +36,3 @@ steps:
 
   - name: Run Forge tests
     run: forge test -vv
-```
