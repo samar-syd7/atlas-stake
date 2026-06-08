@@ -10,7 +10,5 @@ interface IAtlasStaking {
 
     function emergencyWithdraw() external;
 
-    function pendingRewards(
-        address user
-    ) external view returns (uint256);
+    function pendingRewards(address user) external view returns (uint256);
 }

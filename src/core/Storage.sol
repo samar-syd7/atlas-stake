@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-import { IERC20 } from
-    "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 /// @title AtlasStake Storage Layout
 /// @notice Shared storage definitions for protocol contracts
@@ -45,8 +44,7 @@ abstract contract Storage {
     //                         USER STORAGE
     // =============================================================
 
-    mapping(address => UserInfo)
-        internal users;
+    mapping(address => UserInfo) internal users;
 
     // =============================================================
     //                    STORAGE GAP (UPGRADE SAFE)
